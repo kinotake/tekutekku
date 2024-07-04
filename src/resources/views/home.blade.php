@@ -25,30 +25,21 @@
     </nav>
 </header>
 <div class="eyecatch">
-    <img src="{{ asset('/img/eyecatch__pc.jpg') }}"  alt="アイキャッチ"  class="eyecatch_png">
-    <div class="form_contents">
-        <input type="text" class="input_content" placeholder="目的地・施設名を入力してください">
-        <button class="form_button" type="submit">検索</button>
-    </div>
+    <input type="text" class="input_content" placeholder="目的地・施設名を入力してください">
+    <button class="form_button" type="submit">検索</button>
 </div>
 <main class="all_sarch_contents"> 
     <div class="detail_sarch_contents">
         <h2 class="header_middle">検索条件から探す</h2>
         <div class="date_all_contents">
             <div class="top_date_all_content">
-                <div class="date_left_content">
-                    <img src="{{ asset('/img/icon/calendar-icon.png') }}"  alt="カレンダーのアイコン"  class="calendar_png">
-                </div>
-                <div class="date_right_content">
+                <div class="date_content">
                     <label class="check_in">チェックイン</label>
                     <input type="date" class="date_form">
                 </div>
             </div>
             <div class="under_date_all_content">
-                <div class="date_left_content">
-                    <img src="{{ asset('/img/icon/calendar-icon.png') }}"  alt="カレンダーのアイコン"  class="calendar_png">
-                </div>
-                <div class="date_right_content">
+                <div class="date_content">
                     <label class="check_out">チェックアウト</label>
                     <input type="date" class="date_form">
                 </div>
