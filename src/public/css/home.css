@@ -1,0 +1,220 @@
+/* ヘッダに当てているCSS */
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo{
+    height: 50px;
+    width: 200px;
+}
+
+.header_links{
+    display: flex;
+}
+
+.header_link_box {
+    height: 40px;
+    width: 160px;
+    text-align: center;
+}
+
+.header_link{
+    display: inline-block;
+    text-decoration: none;
+    color :grey;
+}
+/* アイキャッチ・検索フォームの設定 */
+.eyecatch{
+    position: relative;
+    width: 100vw;
+}
+
+.form_contents{
+    display: inline-block;
+    position: absolute;
+    top: 40%;
+    left: 25vw;
+}
+
+.eyecatch_png{
+    width: 100vw;
+}
+
+.input_content{
+    height: 3vw;
+    width: 40vw;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.form_button{
+    height: 3vw;
+    width: 4vw;
+    background-color: #0091ff;
+    border: none;
+    color: white;
+    margin-left: -6px;
+    border-radius: 0px 5px 5px 0px;
+}
+/* メインコンテンツ全体の指定（検索フォームでの指定） */
+.all_sarch_contents{
+    display: flex;
+    justify-content: center;
+    height: auto;
+}
+
+/* 詳細条件（左の検索フォームの指定） */
+.detail_sarch_contents{
+    width: 20vw;
+}
+/* 日付検索に関するCSS */
+.date_all_contents {
+    border: 1px solid gray;
+    border-radius: 5px;
+    height: 10vw;
+    width: 18vw;
+    background-color: rgb(247, 247, 247);
+}
+.top_date_all_content{
+    display: flex;
+    height: 5vw;
+}
+.under_date_all_content {
+    display: flex;
+    border-top: 1px solid grey;
+    height: 5vw;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+    /* display: none; */
+}
+.calendar_png{
+    margin-top: 1vw;
+    margin-left: 5px;
+    height: 3vw;
+    width: 3vw;
+}
+.date_right_content{
+    display: inline-block;
+    margin-left: 1vw;
+}
+.check_in,.check_out{
+    display: block;
+    font-size :1vw;
+}
+.date{
+    display: inline-block;
+}
+
+/* セレクトボックスに対するCSS */
+.select_content_label{
+    display: block;
+    font-size: 1vw;
+    margin-top: 2vw;
+    background-color: white;
+}
+.select_content{
+    height: 4vw;
+    width: 18vw;
+    font-size: 15px;
+    background-color: rgb(247, 247, 247);
+    border-radius: 5px;
+}
+
+/* アコーディオンUI */
+.accordion_contents{
+    margin-top: 2vw;
+}
+.summary{
+    display: block;
+    border-bottom: 1px solid grey;
+    margin-bottom: 1vw;
+    margin-top: 5vw;
+}
+summary::-webkit-details-marker {
+    /* Safariで表示されるデフォルトの三角形アイコンを消すためのものになります */
+    display: none;
+}
+.summary_inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.icon {
+    background-image: url("./img/icon/arrow-icon.png");
+    width: auto;
+    height: 40px;
+    transition: transform 0.4s;
+}
+
+/* アコーディオンが開いた時のスタイル */
+details[open] .icon {
+    transform: rotate(180deg);
+}
+.radio{
+    margin-bottom: 1vw;
+}
+.detail_form_button {
+    height: 4vw;
+    width: 20vw;
+    background: rgb(67, 171, 223);
+    color: white;
+    border: none;
+    font-size: 1.5vw;
+    border-radius: 5px;
+}
+
+/* 右の検索絞込のCSS */
+.location_purpose_sarch_contents{
+    width: 35vw;
+}
+.map_png{
+    height: auto;
+    width: 30vw;
+}
+
+.card_contents{
+    display: flex;
+    flex-wrap: wrap;
+}
+.card_content{
+    border: 1px solid rgb(67, 171, 223);
+    text-align: center;
+    width: 10vw;
+    height: 6vw;
+    border-radius: 5px;
+    margin-left: 1vw;
+    margin-bottom: 1vw;
+}
+.icon{
+    margin-top: 4px;
+    height: auto;
+    width: 2vw;
+}
+.card_name{
+    font-size: 1.5vw;
+    color: rgb(67, 171, 223);
+}
+
+/* フッター、下層の著作権に対するCSS */
+.footer_lists{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(239, 238, 238);
+    height: 5vw;
+}
+.footer_list{
+    margin-left: 2vw;
+}
+.link{
+    font-size: 1.1vw;
+}
+.coachtech_logo_content{
+    margin-left: 22vw;
+}
+.coachtech_logo{
+    width: 15vw;
+    height: auto;
+}
