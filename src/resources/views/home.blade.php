@@ -33,7 +33,7 @@
 </div>
 <main class="all_sarch_contents"> 
     <div class="detail_sarch_contents">
-        <h2>検索条件から探す</h2>
+        <h2 class="header_middle">検索条件から探す</h2>
         <div class="date_all_contents">
             <div class="top_date_all_content">
                 <div class="date_left_content">
@@ -41,7 +41,7 @@
                 </div>
                 <div class="date_right_content">
                     <label class="check_in">チェックイン</label>
-                    <input type="date">
+                    <input type="date" class="date_form">
                 </div>
             </div>
             <div class="under_date_all_content">
@@ -50,11 +50,11 @@
                 </div>
                 <div class="date_right_content">
                     <label class="check_out">チェックアウト</label>
-                    <input type="date">
+                    <input type="date" class="date_form">
                 </div>
             </div>
         </div>
-        <div class="select_content">
+        <div class="select_contents">
             <label class="select_content_label">利用人数</label>
             <select class="select_content">
                 <option>1名</option>
@@ -62,7 +62,7 @@
                 <option>3名</option>
             </select>
         </div>
-        <div class="select_content">
+        <div class="select_contents">
             <label class="select_content_label">目的</label>
             <select class="select_content">
                 <option>旅行</option>
@@ -70,47 +70,53 @@
                 <option>冒険</option>
             </select>
         </div>
-        <div class="select_content">
+        <div class="select_contents">
             <label class="select_content_label">エリア</label>
             <select class="select_content">
                 <option>北海道</option>
                 <option>東北</option>
                 <option>関東</option>
+                <option>東海</option>
                 <option>中部</option>
                 <option>近畿</option>
                 <option>中国</option>
                 <option>四国</option>
                 <option>九州</option>
+                <option>沖縄</option>
             </select>
         </div>
         <div class="accordion_contents">
             <details>
                 <summary class="summary">
-                    <span class="summary_inner">
-                    こだわり条件<span class="icon"></span>
-                    </span>
+                    <div class="summary_inner">
+                        <img src="{{ asset('/img/icon/arrow-icon.png') }}"  alt="オープンののアイコン"  class="open_icon">
+                    </div>
                 </summary>
                 <div>
                     <p>食事タイプ</p>
                     <input type="radio" name="radio" class="radio" style="transform:scale(1.5)";/>
-                    <label>夕朝食付き</label></br>
+                    <label class="radio_label">夕朝食付き</label></br>
                     <input type="radio" name="radio" class="radio" style="transform:scale(1.5);"/>
-                    <label>朝食付き</label></br>
+                    <label class="radio_label">朝食付き</label></br>
                     <input type="radio" name="radio" class="radio" style="transform:scale(1.5);"/>
-                    <label>夕食付き</label></br>
+                    <label class="radio_label">夕食付き</label></br>
                     <input type="radio" name="radio" class="radio" style="transform:scale(1.5);"/>
-                    <label>素泊まり</label></br>
+                    <label class="radio_label">素泊まり</label></br>
                 </div>
-                <div>
+                <div class="checkbox_contents">
                     <p>部屋こだわり</p>
-                    <input type="checkbox" name="checkbox"/>
-                    <label>禁煙</label></br>
-                    <input type="checkbox" name="checkbox"/>
-                    <label>露天風呂付き</label></br>
-                    <input type="checkbox" name="checkbox"/>
-                    <label>スイートルーム</label></br>
-                    <input type="checkbox" name="checkbox"/>
-                    <label>景色が綺麗</label></br>
+                    <label class="checkbox_label" for="no_smoking">
+                        <input type="checkbox" id="no_smoking"><span class="text">禁煙</span>
+                    </label><br>
+                    <label class="checkbox_label" for="spa">
+                        <input type="checkbox" id="spa"><span class="text">露天風呂付き</span>
+                    </label><br>
+                    <label class="checkbox_label" for="luxury">
+                        <input type="checkbox" id="luxury"><span class="text">スイートルーム</span>
+                    </label><br>
+                    <label class="checkbox_label" for="view">
+                        <input type="checkbox" id="view"><span class="text">景色が綺麗</span>
+                    </label><br>
                 </div>
             </details>
         </div>
@@ -118,13 +124,43 @@
     </div>
     <div class="location_purpose_sarch_contents">
         <div class="location_sarch_contents">
-            <h2>地図から探す</h2>
-            <div class="map">
+            <h2 class="header_middle">地図から探す</h2>
+            <div class="map_contents">
                 <img src="{{ asset('/img/map.png') }}"  alt="マップ画像"  class="map_png">
+                <div class="hokkaido">
+                    <button type="button" class="area_button">北海道</button>
+                </div>
+                <div class="touhoku">
+                    <button type="button" class="area_button">東北</button>
+                </div>
+                <div class="kanto">
+                    <button type="button" class="area_button">関東</button>
+                </div>
+                <div class="toukai">
+                    <button type="button" class="area_button">東海</button>
+                </div>
+                <div class="hokuriku">
+                    <button type="button" class="area_button">北陸</button>
+                </div>
+                <div class="kinki">
+                    <button type="button" class="area_button">近畿</button>
+                </div>
+                <div class="tyuugoku">
+                    <button type="button" class="area_button">中国</button>
+                </div>
+                <div class="shikoku">
+                    <button type="button" class="area_button">四国</button>
+                </div>
+                <div class="kyuusyuu">
+                    <button type="button" class="area_button">九州</button>
+                </div>
+                <div class="okinawa">
+                    <button type="button" class="area_button">沖縄</button>
+                </div>
             </div>
         </div>
         <div class="purpose_sarch_contents">
-            <h2>目的から探す</h2>
+            <h2 class="header_middle">目的から探す</h2>
             <div class="card_contents">
                 <div class="card_content">
                     <img src="{{ asset('/img/icon/business-icon.jpg') }}"  alt="出張のアイコン" class="icon">

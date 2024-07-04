@@ -3,7 +3,10 @@
     display: flex;
     justify-content: space-between;
 }
-
+.header_middle{
+    font-family: "sans-serif";
+    font-size: 2vw;
+}
 .logo{
     height: 50px;
     width: 200px;
@@ -66,13 +69,14 @@
 /* 詳細条件（左の検索フォームの指定） */
 .detail_sarch_contents{
     width: 20vw;
+    margin-right: 1.5vw;
 }
 /* 日付検索に関するCSS */
 .date_all_contents {
     border: 1px solid gray;
     border-radius: 5px;
     height: 10vw;
-    width: 18vw;
+    width: 19vw;
     background-color: rgb(247, 247, 247);
 }
 .top_date_all_content{
@@ -84,12 +88,34 @@
     border-top: 1px solid grey;
     height: 5vw;
 }
-input[type="date"]::-webkit-calendar-picker-indicator {
-    /* display: none; */
+.date_form{
+    height: 2vw;
+    width: 12.5vw;
+    border: none;
+    background-color: rgb(247, 247, 247);
+    margin-top: 5px;
 }
+
+.date_form[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    cursor: pointer;
+    margin-left: -3vw;
+    height: 5vw;
+    width: 5vw;
+    background: transparent;
+    color: transparent;
+}
+
+.date_form[type="date"]::-webkit-datetime-edit {
+    position: relative;
+    font-size: 2vw;
+    font-family: "sans-serif";
+    color :grey;
+}
+
 .calendar_png{
     margin-top: 1vw;
-    margin-left: 5px;
+    margin-left: 7px;
     height: 3vw;
     width: 3vw;
 }
@@ -106,49 +132,51 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 /* セレクトボックスに対するCSS */
+.select_contents {
+    margin-top: 1vw;
+}
 .select_content_label{
     display: block;
     font-size: 1vw;
-    margin-top: 2vw;
     background-color: white;
 }
 .select_content{
     height: 4vw;
-    width: 18vw;
+    width: 20vw;
     font-size: 15px;
     background-color: rgb(247, 247, 247);
     border-radius: 5px;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url("../img/icon/arrow-icon.png");
+    background-repeat: no-repeat;
+    background-size: 2vw 2vw;
+    background-position: 17vw center;
 }
 
 /* アコーディオンUI */
 .accordion_contents{
-    margin-top: 2vw;
+    margin-top: 1vw;
 }
 .summary{
     display: block;
     border-bottom: 1px solid grey;
     margin-bottom: 1vw;
-    margin-top: 5vw;
+    margin-top: 4vw;
 }
-summary::-webkit-details-marker {
+.summary::-webkit-details-marker {
     /* Safariで表示されるデフォルトの三角形アイコンを消すためのものになります */
     display: none;
 }
-.summary_inner {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-.icon {
-    background-image: url("./img/icon/arrow-icon.png");
-    width: auto;
-    height: 40px;
+.open_icon {
+    margin-left: 17vw;
+    width: 2vw;
+    height: 2vw;
     transition: transform 0.4s;
 }
 
 /* アコーディオンが開いた時のスタイル */
-details[open] .icon {
+details[open] .open_icon {
     transform: rotate(180deg);
 }
 .radio{
@@ -164,15 +192,116 @@ details[open] .icon {
     border-radius: 5px;
 }
 
+/* ラジオボタン・チェックボックスに対するCSS */
+.radio_label{
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+.checkbox_contents{
+    margin-bottom: 2vw;
+}
+.checkbox_label {
+    cursor: pointer;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+.checkbox_label input {
+    display: none;
+}
+.checkbox_label input+.text:before {
+    content: "";
+    display: inline-block;
+    position: relative;
+    top: 0.25em;
+    margin: 0 5px 0 0;
+    background-image: none, url("../img/icon/check-box-icon.png");
+    background-size: 68% auto, 100%;
+    background-position: top 55% left 50%, 0 0;
+    background-repeat: no-repeat, no-repeat;
+    width: 2vw;
+    height: 2vw;
+}
+.checkbox_label input:checked+.text:before {
+    background-image: url("../img/icon/check-box-icon.png");
+    
+}
+
 /* 右の検索絞込のCSS */
 .location_purpose_sarch_contents{
     width: 35vw;
+    margin-left: 1.5vw;
+}
+/* マップでの絞り込みに対するCSS */
+.map_contents{
+    position: relative;
+    width: 30vw;
+    height: 25vw;
 }
 .map_png{
-    height: auto;
-    width: 30vw;
+    width: 35vw;
+    height: 25vw;
 }
-
+.area_button{
+    border: none;
+    height: 2vw;
+    border-radius: 5px;
+    color: rgb(67, 171, 223);
+    text-decoration: underline 1px solid rgb(67, 171, 223);
+    box-shadow: 1px 1px 1px 0px gray;
+}
+.hokkaido{
+    position: absolute;
+    top: 2vw;
+    left:21vw;
+}
+.touhoku{
+    position: absolute;
+    top: 11vw;
+    left: 26vw;
+}
+.kanto{
+    position: absolute;
+    top: 17vw;
+    left: 21vw;
+}
+.toukai{
+    position: absolute;
+    top: 21vw;
+    left: 17vw;
+}
+.hokuriku{
+    position: absolute;
+    top: 11vw;
+    left: 14vw;
+}
+.tyubu{
+    position: absolute;
+}
+.kinki{
+    position: absolute;
+    top: 12vw;
+    left: 10vw;
+}
+.tyuugoku{
+    position: absolute;
+    top: 11vw;
+    left: 6vw;
+}
+.shikoku{
+    position: absolute;
+    top: 19vw;
+    left: 3vw;
+}
+.kyuusyuu{
+    position: absolute;
+    top: 12vw;
+    left: 2vw;
+}
+.okinawa{
+    position: absolute;
+    top: 21vw;
+    left: 11vw;
+}
 .card_contents{
     display: flex;
     flex-wrap: wrap;
