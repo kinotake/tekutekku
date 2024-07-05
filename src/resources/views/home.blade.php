@@ -11,22 +11,28 @@
 
 <body>
 <header class="header">
-    <div>
+    <a href="/" class="link">
         <img src="{{ asset('/img/logo.png') }}"  alt="てくてっくのロゴ"  class="logo"> 
-    </div>
+    </a>
     <nav>
         <ul class="header_links">
-            <li class="header_link_box"><a href="" class="header_link">ログイン</a></li>
-            <li class="header_link_box"><a href="" class="header_link">会員登録</a></li>
-            <li class="header_link_box"><a href="" class="header_link">予約確認</a></li>
-            <li class="header_link_box"><a href="" class="header_link">ニュース</a></li>
-            <li class="header_link_box"><a href="" class="header_link">マイページ</a></li>
+            <li class="header_link_box"><a href="/header" class="header_link">ログイン</a></li>
+            <li class="header_link_box"><a href="/header" class="header_link">会員登録</a></li>
+            <li class="header_link_box"><a href="/header" class="header_link">予約確認</a></li>
+            <li class="header_link_box"><a href="/header" class="header_link">ニュース</a></li>
+            <li class="header_link_box"><a href="/header" class="header_link">マイページ</a></li>
+            <a href="/header">
+                <img src="{{ asset('/img/icon/bars-icon.png') }}"  alt="ハンバーガーメニューの線"  class="menu">
+            </a>
         </ul>
     </nav>
 </header>
 <div class="eyecatch">
-    <input type="text" class="input_content" placeholder="目的地・施設名を入力してください">
-    <button class="form_button" type="submit">検索</button>
+    <form action="/keyword" method = "POST" class="form">
+    @csrf
+        <input type="text" class="input_content" name="keyword" class="keyword" placeholder="目的地・施設名を入力してください">
+        <button class="form_button" type="submit">検索</button>
+    </form>
 </div>
 <main class="all_sarch_contents"> 
     <div class="detail_sarch_contents">
@@ -84,18 +90,18 @@
                     </div>
                 </summary>
                 <div>
-                    <p>食事タイプ</p>
-                    <input type="radio" name="radio" class="radio" style="transform:scale(1.5)";/>
+                    <p class="accordion_header">食事タイプ</p>
+                    <input type="radio" name="radio" class="radio"/>
                     <label class="radio_label">夕朝食付き</label></br>
-                    <input type="radio" name="radio" class="radio" style="transform:scale(1.5);"/>
+                    <input type="radio" name="radio" class="radio"/>
                     <label class="radio_label">朝食付き</label></br>
-                    <input type="radio" name="radio" class="radio" style="transform:scale(1.5);"/>
+                    <input type="radio" name="radio" class="radio"/>
                     <label class="radio_label">夕食付き</label></br>
-                    <input type="radio" name="radio" class="radio" style="transform:scale(1.5);"/>
+                    <input type="radio" name="radio" class="radio"/>
                     <label class="radio_label">素泊まり</label></br>
                 </div>
                 <div class="checkbox_contents">
-                    <p>部屋こだわり</p>
+                    <p class="accordion_header">部屋こだわり</p>
                     <label class="checkbox_label" for="no_smoking">
                         <input type="checkbox" id="no_smoking"><span class="text">禁煙</span>
                     </label><br>
@@ -111,7 +117,10 @@
                 </div>
             </details>
         </div>
-        <button class="detail_form_button">検索する</button>
+        <form action="/result" method = "GET" class="form">
+        @csrf
+            <button class="detail_form_button">検索する</button>
+        </form>
     </div>
     <div class="location_purpose_sarch_contents">
         <div class="location_sarch_contents">
@@ -119,78 +128,86 @@
             <div class="map_contents">
                 <img src="{{ asset('/img/map.png') }}"  alt="マップ画像"  class="map_png">
                 <div class="hokkaido">
-                    <button type="button" class="area_button">北海道</button>
+                    <button onclick="location.href='/area'" class="area_button" >北海道</button>
                 </div>
                 <div class="touhoku">
-                    <button type="button" class="area_button">東北</button>
+                    <button onclick="location.href='/area'" class="area_button">東北</button>
                 </div>
                 <div class="kanto">
-                    <button type="button" class="area_button">関東</button>
+                    <button onclick="location.href='/area'" class="area_button">関東</button>
                 </div>
                 <div class="toukai">
-                    <button type="button" class="area_button">東海</button>
+                    <button onclick="location.href='/area'" class="area_button">東海</button>
                 </div>
                 <div class="hokuriku">
-                    <button type="button" class="area_button">北陸</button>
+                    <button onclick="location.href='/area'" class="area_button">北陸</button>
                 </div>
                 <div class="kinki">
-                    <button type="button" class="area_button">近畿</button>
+                    <button onclick="location.href='/area'" class="area_button">近畿</button>
                 </div>
                 <div class="tyuugoku">
-                    <button type="button" class="area_button">中国</button>
+                    <button onclick="location.href='/area'" class="area_button">中国</button>
                 </div>
                 <div class="shikoku">
-                    <button type="button" class="area_button">四国</button>
+                    <button onclick="location.href='/area'" class="area_button">四国</button>
                 </div>
                 <div class="kyuusyuu">
-                    <button type="button" class="area_button">九州</button>
+                    <button onclick="location.href='/area'" class="area_button">九州</button>
                 </div>
                 <div class="okinawa">
-                    <button type="button" class="area_button">沖縄</button>
+                    <button onclick="location.href='/area'" class="area_button">沖縄</button>
                 </div>
             </div>
         </div>
         <div class="purpose_sarch_contents">
             <h2 class="header_middle">目的から探す</h2>
             <div class="card_contents">
-                <div class="card_content">
+                <a class="card_content" href="/purpose">
                     <img src="{{ asset('/img/icon/business-icon.jpg') }}"  alt="出張のアイコン" class="icon">
                     <p class="card_name">出張</p>
-                </div>
-                <div class="card_content">
+                </a>
+                <a class="card_content" href="/purpose">
                     <img src="{{ asset('/img/icon/leisure-icon.jpg') }}"  alt="レジャーのアイコン" class="icon">
                     <p class="card_name">レジャー</p>
-                </div>
-                <div class="card_content">
+                </a>
+                <a class="card_content" href="/purpose">
                     <img src="{{ asset('/img/icon/spa-icon.jpg') }}"  alt="温泉のアイコン" class="icon">
                     <p class="card_name">温泉</p>
-                </div>
-                <div class="card_content">
+                </a>
+                <a class="card_content" href="/purpose">
                     <img src="{{ asset('/img/icon/coupon-icon.jpg') }}"  alt="クーポンのアイコン" class="icon">
                     <p class="card_name">クーポン</p>
-                </div>
-                <div class="card_content">
+                </a>
+                <a class="card_content" href="/purpose">
                     <img src="{{ asset('/img/icon/luxury-hotel-icon.jpg') }}"  alt="高級宿のアイコン" class="icon">
                     <p class="card_name">高級宿</p>
-                </div>
-                <div class="card_content">
+                </a>
+                <a class="card_content" href="/purpose">
                     <img src="{{ asset('/img/icon/cheap-hotel-icon.jpg') }}"  alt="格安宿のアイコン" class="icon">
                     <p class="card_name">格安宿</p>
-                </div>
+                </a>
             </div>
         </div>
     </div>
 </main>
 <footer>
     <ul class="footer_lists">
-        <li class="footer_list"><a herf="" class="link">ヘルプ・お問い合わせ</a><li>
-        <li class="footer_list"><a herf="" class="link">会員規約</a><li>
-        <li class="footer_list"><a herf="" class="link">個人情報保護方針</a><li>
-        <li class="footer_list"><a herf="" class="link">クッキー利用について</a><li>
-        <li class="footer_list"><a herf="" class="link">会社情報</a><li>
-        <li class="footer_list"><a herf="" class="link">プライバシーポリシー</a><li>
+        <div class="responsive_footer_list">
+            <li class="footer_list"><a href="/header" class="footer_link">ヘルプ・お問い合わせ</a><li>
+            <li class="footer_list"><a href="/header" class="footer_link">会員規約</a><li>
+        </div>
+        <div class="responsive_footer_list">
+            <li class="footer_list"><a href="/header" class="footer_link">個人情報保護方針</a><li>
+            <li class="footer_list"><a href="/header" class="footer_link">クッキー利用について</a><li>
+        </div>
+        <div class="responsive_footer_list">
+            <li class="footer_list"><a href="/header" class="footer_link">会社情報</a><li>
+            <li class="footer_list"><a href="/header" class="footer_link">プライバシーポリシー</a><li>
+        </div>
     </ul>
 </footer>
-<small class="coachtech_logo_content">Powered by <img src="{{ asset('/img/coachtech-logo.png') }}"  alt="coachtechのロゴ" class="coachtech_logo"></small>
+<a href="https://coachtech.site/" class="link">
+    <small class="coachtech_logo_content"><p class="powered_by">Powered by</p><img src="{{ asset('/img/coachtech-logo.png') }}"  alt="coachtechのロゴ" class="coachtech_logo"></small>
+</a>
 </body>
 </html>

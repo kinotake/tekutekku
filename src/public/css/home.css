@@ -12,12 +12,18 @@
     height: 5vw;;
     width: 20vw;
 }
-
+@media screen and (max-width: 999px) {
+    .logo {
+        height: 10vw;
+        width: 40vw;
+        margin-bottom: 3vw;
+    }
+}
 .header_links{
     display: flex;
 }
 @media screen and (max-width: 999px) {
-    .header_links {
+    .header_link_box{
         display: none;
     }
 }
@@ -26,12 +32,21 @@
     width: 10vw;
     text-align: center;
 }
-
 .header_link{
     display: inline-block;
     text-decoration: none;
     color :grey;
     font-size: 1.5vw;
+}
+.menu {
+    display: inline-block;
+    height: 10vw;
+    width: 10vw;
+}
+@media screen and (min-width: 999px) {
+    .menu {
+        display: none;
+    }
 }
 /* アイキャッチ・検索フォームの設定 */
 .eyecatch{
@@ -47,7 +62,7 @@
     .eyecatch {
         position: relative;
         width: 100vw;
-        height: 20vw;
+        height: 60vw;
         background-size: cover;
         background-image: url("../img/eyecatch__sp.jpg");
         text-align: center;
@@ -59,6 +74,11 @@
     border-radius: 5px 0px 0px 5px;
     margin-top: 8.5vw;
 }
+@media screen and (max-width: 999px) {
+    .input_content{
+        display: none;
+    }
+}
 .form_button{
     height: 3vw;
     width: 4vw;
@@ -68,6 +88,11 @@
     margin-left: -6px;
     border-radius: 0px 5px 5px 0px;
 }
+@media screen and (max-width: 999px) {
+    .form_button{
+        display: none;
+    }
+}
 /* メインコンテンツ全体の指定（検索フォームでの指定） */
 .all_sarch_contents{
     display: flex;
@@ -76,9 +101,19 @@
 }
 
 /* 詳細条件（左の検索フォームの指定） */
+@media screen and (max-width: 999px) {
+    .header_middle{
+        font-size: 6vw;
+    }
+}
 .detail_sarch_contents{
     width: 20vw;
     margin-right: 1.5vw;
+}
+@media screen and (max-width: 999px) {
+    .detail_sarch_contents{
+        width: 90vw;
+    }
 }
 /* 日付検索に関するCSS */
 .date_all_contents {
@@ -88,22 +123,54 @@
     width: 20vw;
     background-color: rgb(247, 247, 247);
 }
+@media screen and (max-width: 999px) {
+    .date_all_contents{
+        height: 35vw;
+        width: 90vw;
+    }
+}
 .top_date_all_content{
     display: flex;
     height: 5vw;
 }
+@media screen and (max-width: 999px) {
+    .top_date_all_content{
+        height: 17vw;
+    }
+}
+.check_in,
+.check_out {
+    display: block;
+    font-size: 1vw;
+}
 .check_in{
     margin-left: 5vw;
 }
+@media screen and (max-width: 999px) {
+    .check_in{
+        display: inline-block;
+        margin-left: 15vw;
+        height:4vw;
+        font-size: 4vw;
+    }
+}
 .check_out {
     margin-left: 5vw;
+}
+@media screen and (max-width: 999px) {
+    .check_out {
+        display: inline-block;
+        margin-left: 15vw;
+        height: 4vw;
+        font-size: 4vw;
+    }
 }
 .under_date_all_content {
     display: flex;
     border-top: 1px solid grey;
     height: 5vw;
 }
-.date_form::before {
+.date_form::before{
     background: url("../img/icon/calendar-icon.png") no-repeat;
     content: "";
     position: absolute;
@@ -112,6 +179,15 @@
     width: 5vw;
     right: 12vw;
     top: -1vw;
+}
+@media screen and (max-width: 999px) {
+    .date_form::before{
+        background-size: 12vw 12vw;
+        height: 20vw;
+        width: 30vw;
+        right: 53vw;
+        top: -5vw;
+    }
 }
 .date_form{
     position: relative;
@@ -122,7 +198,14 @@
     margin-top: 5px;
     margin-left: 5vw;
 }
-.date_form[type="date"]::-webkit-calendar-picker-indicator {
+@media screen and (max-width: 999px) {
+    .date_form{
+        margin-top: 3vw;
+        height: 4vw;
+        width: 80vw;
+    }
+}
+.date_form[type="date"]::-webkit-calendar-picker-indicator{
     position: absolute;
     cursor: pointer;
     margin-left: -3vw;
@@ -131,19 +214,27 @@
     background: transparent;
     color: transparent;
 }
+@media screen and (max-width: 999px) {
+    .date_form[type="date"]::-webkit-calendar-picker-indicator{
+        height: 12vw;
+        width: 12vw;
+    }
+}
 .date_form[type="date"]::-webkit-datetime-edit {
     position: relative;
     font-size: 2vw;
     font-family: "sans-serif";
     color :grey;
 }
+@media screen and (max-width: 999px) {
+    .date_form[type="date"]::-webkit-datetime-edit{
+        font-size: 6vw;
+        margin-left: 10vw;
+    }
+}
 .date_content{
     display: inline-block;
     margin-left: 1vw;
-}
-.check_in,.check_out{
-    display: block;
-    font-size :1vw;
 }
 .date{
     display: inline-block;
@@ -158,6 +249,11 @@
     font-size: 1vw;
     background-color: white;
 }
+@media screen and (max-width: 999px) {
+    .select_content_label{
+        font-size: 4vw;
+    }
+}
 .select_content{
     height: 4vw;
     width: 20vw;
@@ -170,6 +266,15 @@
     background-repeat: no-repeat;
     background-size: 2vw 2vw;
     background-position: 17vw center;
+}
+@media screen and (max-width: 999px) {
+    .select_content{
+        width: 90vw;
+        height: 17vw;
+        background-size: 10vw 10vw;
+        font-size: 5vw;
+        background-position: 75vw center;
+    }
 }
 
 /* アコーディオンUI */
@@ -192,7 +297,13 @@
     height: 2vw;
     transition: transform 0.4s;
 }
-
+@media screen and (max-width: 999px) {
+    .open_icon{
+        margin-left: 75vw;
+        width: 10vw;
+        height: 10vw;
+    }
+}
 /* アコーディオンが開いた時のスタイル */
 details[open] .open_icon {
     transform: rotate(180deg);
@@ -209,11 +320,40 @@ details[open] .open_icon {
     font-size: 1.5vw;
     border-radius: 5px;
 }
+@media screen and (max-width: 999px) {
+    .detail_form_button{
+        height: 10vw;
+        font-size: 4vw;
+        width: 90vw;
+    }
+}
 
 /* ラジオボタン・チェックボックスに対するCSS */
+@media screen and (max-width: 999px) {
+    .accordion_header {
+        margin-left: 2vw;
+        font-size: 4vw;
+    }
+}
+.radio{
+    transform: scale(1.5);
+}
+@media screen and (max-width: 999px) {
+    .radio {
+        margin-top: 2vw;
+        transform: scale(3.5);
+        margin-left: 3vw;
+    }
+}
 .radio_label{
-    margin-top: 1vw;
     margin-bottom: 1vw;
+}
+@media screen and (max-width: 999px) {
+    .radio_label {
+        margin-top: 2vw;
+        margin-left: 2vw;
+        font-size: 4vw;
+    }
 }
 .checkbox_contents{
     margin-bottom: 2vw;
@@ -223,8 +363,19 @@ details[open] .open_icon {
     margin-top: 1vw;
     margin-bottom: 1vw;
 }
+@media screen and (max-width: 999px) {
+    .checkbox_label{
+        font-size: 4vw;
+    }
+}
 .checkbox_label input {
     display: none;
+}
+@media screen and (max-width: 999px) {
+    .checkbox_label input{
+        width: 7vw;
+        height: 7vw;
+    }
 }
 .checkbox_label input+.text:before {
     content: "";
@@ -236,17 +387,27 @@ details[open] .open_icon {
     background-size: 68% auto, 100%;
     background-position: top 55% left 50%, 0 0;
     background-repeat: no-repeat, no-repeat;
-    width: 2vw;
-    height: 2vw;
+    width: 19px;
+    height: 18px;
+}
+@media screen and (max-width: 999px) {
+    .checkbox_label input+.text::before{
+        width: 7vw;
+        height: 7vw;
+    }
 }
 .checkbox_label input:checked+.text:before {
     background-image: url("../img/icon/check-box-icon.png");
 }
-
 /* 右の検索絞込のCSS */
 .location_purpose_sarch_contents{
     width: 35vw;
     margin-left: 1.5vw;
+}
+@media screen and (max-width: 999px) {
+    .location_purpose_sarch_contents{
+        display: none;
+    }
 }
 /* マップでの絞り込みに対するCSS */
 .map_contents{
@@ -325,6 +486,7 @@ details[open] .open_icon {
     flex-wrap: wrap;
 }
 .card_content{
+    display: inline-block;
     border: 1px solid rgb(67, 171, 223);
     text-align: center;
     width: 10vw;
@@ -332,6 +494,7 @@ details[open] .open_icon {
     border-radius: 5px;
     margin-left: 1vw;
     margin-bottom: 1vw;
+    text-decoration: none;
 }
 .icon{
     margin-top: 4px;
@@ -353,16 +516,67 @@ details[open] .open_icon {
     height: 5vw;
     width: 100vw;
 }
+@media screen and (max-width: 999px) {
+    .footer_lists{
+        display: inline-block;
+        height: 30vw;
+    }
+}
+.responsive_footer_list {
+    display: flex;
+}
+@media screen and (max-width: 999px) {
+    .responsive_footer_list{
+        margin-left: 3vw;
+    }
+}
 .footer_list{
     margin-left: 2vw;
 }
-.link{
-    font-size: 1.1vw;
+@media screen and (max-width: 999px) {
+    .footer_list{
+        height: 10vw;
+        width: 40vw;
+    }
+}
+.footer_link{
+    display: inline-block;
+    text-decoration: none;
+    color: grey;
+    font-size: 1.2vw;
+}
+@media screen and (max-width: 999px) {
+    .footer_link{
+        margin-top: 2vw;
+        font-size: 3vw;
+    }
 }
 .coachtech_logo_content{
     margin-left: 22vw;
 }
+@media screen and (max-width: 999px) {
+    .coachtech_logo_content{
+        margin-left: 10vw;
+    }
+}
+.powered_by{
+    display: inline-block;
+    text-decoration: none;
+    color: grey;
+    font-size: 1.2vw;
+}
+@media screen and (max-width: 999px) {
+    .powered_by{
+        font-size: 4vw;
+    }
+}
 .coachtech_logo{
     width: 15vw;
     height: auto;
+}
+@media screen and (max-width: 999px) {
+    .coachtech_logo{
+        margin-left: 4vw;
+        width: 40vw;
+    }
 }

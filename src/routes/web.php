@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\WolkController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,4 +15,22 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
+});
+
+Route::post('/keyword', [WolkController::class, 'postKeyword']);
+
+Route::get('/result', function () {
+    return view('result');
+});
+
+Route::get('/area', function () {
+    return view('area');
+});
+
+Route::get('/header', function () {
+    return view('header');
+});
+
+Route::get('purpose', function () {
+    return view('purpose');
 });
